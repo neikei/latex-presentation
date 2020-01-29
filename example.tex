@@ -1,0 +1,105 @@
+% Config
+\documentclass{beamer}
+\usepackage[sfdefault]{FiraSans}
+\usepackage[utf8]{inputenc}
+\usetheme[
+  outer/progressbar=foot,
+  outer/numbering=none
+]{metropolis}
+\usefonttheme{professionalfonts}
+\definecolor{LightGrey}{HTML}{DEDEDE}
+\definecolor{DarkGrey}{HTML}{555555}
+\definecolor{Red}{HTML}{FF0000}
+
+% Styling
+\setbeamercolor{alerted text}{fg=Red}
+\setbeamercolor{frametitle}{bg=DarkGrey}
+\metroset{block=fill}
+
+% Metadata
+\title{Example}
+\date{\today}
+\author{neikei}
+\institute{TechMeetup}
+
+% Document
+\begin{document}
+
+\maketitle
+
+    \begin{frame}{TOC}
+        \tableofcontents
+    \end{frame}
+
+\section{Intro}
+
+    \begin{frame}{Example}
+        Hello, world!
+    \end{frame}
+
+    \begin{frame}{Test}    
+        \begin{alertblock}{Block Title}
+        Hello, world!
+        \end{alertblock}
+
+        \begin{block}{Default}
+            Block content.
+        \end{block}
+
+        \begin{alertblock}{Alert}
+            Block content.
+        \end{alertblock}
+
+        \begin{exampleblock}{Example}
+            Block content.
+        \end{exampleblock}
+
+    \end{frame}
+
+\section{Slides}
+
+    \begin{frame}{List}
+        \begin{itemize}
+            \item Regular
+            \item \textit{Italic}
+            \item \textsc{SmallCaps}
+            \item \textbf{Bold}
+            \item \textbf{\textit{Bold Italic}}
+            \item \textbf{\textsc{Bold SmallCaps}}
+            \item \texttt{Monospace}
+            \item \texttt{\textit{Monospace Italic}}
+            \item \texttt{\textbf{Monospace Bold}}
+            \item \texttt{\textbf{\textit{Monospace Bold Italic}}}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Table}
+        \begin{center}
+        \begin{tabular}{ |c|c|c| } 
+        \hline
+        \textbf{cell1} & \textbf{cell2} & \textbf{cell3} \\ \hline
+        cell4 & \alert{cell5} & cell6 \\ \hline
+        cell7 & cell8 & cell9 \\ \hline
+        \end{tabular}
+        \end{center}
+    \end{frame}
+
+\section{More slides}
+
+    \begin{frame}{Source}
+        \begin{itemize}
+        \item \href{https://www.startpage.com/}{Startpage}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Conclusion}
+        Lorem ...
+    \end{frame}
+
+    {\setbeamercolor{palette primary}{fg=LightGrey, bg=DarkGrey}
+    \begin{frame}[standout]
+    Questions?
+    \end{frame}
+    }
+
+\end{document}
