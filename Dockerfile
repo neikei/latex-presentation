@@ -1,21 +1,20 @@
 FROM debian:buster
 
 LABEL maintainer="neikei"
-LABEL version="1.0"
+LABEL version="1.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update -q && apt install -qy \
+VOLUME ["/data"]
+
+RUN apt update -q && apt install -qy --no-install-recommends \
     texlive-full \
+	texlive-latex-extra \
     texlive-fonts-extra \
     fonts-firacode \
     wget \
+	latexmk \
+	python3-pygments \
     && rm -rf /var/lib/apt/lists/*
 
-RUN tlmgr init-usertree
-RUN tlmgr option repository ftp://tug.org/historic/systems/texlive/2018/tlnet-final
-RUN tlmgr install minted
-RUN tlmgr update --all
-
 WORKDIR /data
-VOLUME ["/data"]

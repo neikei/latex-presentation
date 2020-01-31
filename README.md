@@ -2,8 +2,8 @@
 
 ```bash
 # Build Docker image
-docker build -t neikei/latex:v1.0 .
+docker build -t neikei/latex:v1.1 .
 
 # Run script to compile a PDF
-./buildTexfileDocker.sh pdflatex example.tex
+cd presentations && ../buildTexfileDocker.sh example.tex
 ```

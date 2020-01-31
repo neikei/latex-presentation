@@ -2,9 +2,10 @@
 \documentclass{beamer}
 \usepackage[sfdefault]{FiraSans}
 \usepackage[utf8]{inputenc}
+\usepackage{minted}
 \usetheme[
   outer/progressbar=foot,
-  outer/numbering=none
+  %outer/numbering=none
 ]{metropolis}
 \usefonttheme{professionalfonts}
 \definecolor{LightGrey}{HTML}{DEDEDE}
@@ -14,6 +15,7 @@
 % Styling
 \setbeamercolor{alerted text}{fg=Red}
 \setbeamercolor{frametitle}{bg=DarkGrey}
+\setbeamertemplate{frame footer}{\color{DarkGrey}\insertinstitute}
 \metroset{block=fill}
 
 % Metadata
@@ -37,24 +39,30 @@
         Hello, world!
     \end{frame}
 
-    \begin{frame}{Test}    
+    \begin{frame}{Blocks}    
         \begin{alertblock}{Block Title}
         Hello, world!
         \end{alertblock}
 
-        \begin{block}{Default}
-            Block content.
+        \begin{block}{CentOS 7}
+            \texttt{vagrant init centos/7 \newline vagrant up}
         \end{block}
 
-        \begin{alertblock}{Alert}
-            Block content.
-        \end{alertblock}
-
-        \begin{exampleblock}{Example}
-            Block content.
-        \end{exampleblock}
-
+        \begin{block}{CentOS 8}
+            \texttt{vagrant init centos/8 \newline vagrant up}
+        \end{block}
     \end{frame}
+
+	\begin{frame}[fragile]{Code} %We need a fragile frame here! Minted wont work otherwise.
+		\begin{minted}{c}
+		// count up to ten
+		int i = 0;
+		for(int n=0; n++; n<10){
+			i++;
+			printf("%i", i);
+		}
+		\end{minted}
+	\end{frame}
 
 \section{Slides}
 
@@ -97,9 +105,11 @@
     \end{frame}
 
     {\setbeamercolor{palette primary}{fg=LightGrey, bg=DarkGrey}
+    \setbeamertemplate{frame footer}{\color{LightGrey}\insertinstitute}
+    \setbeamertemplate{frame numbering}{}
     \begin{frame}[standout]
     Questions?
     \end{frame}
     }
-
+	
 \end{document}
